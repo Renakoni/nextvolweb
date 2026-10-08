@@ -1,0 +1,715 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T14:39:00.329Z",
+  "title": "Design System: NextVol",
+  "extensions": {
+    "colorMeta": {
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Cobalt Jacket",
+        "canonical": "oklch(44.4% 0.208 266.7)",
+        "tonalRamp": [
+          "#020035",
+          "#080079",
+          "#1427ae",
+          "#2c4fd5",
+          "#4a75fd",
+          "#7ca1fe",
+          "#b1c8fe",
+          "#e8eefe"
+        ]
+      },
+      "vermilion": {
+        "role": "primary",
+        "displayName": "Download Vermilion",
+        "canonical": "oklch(57.4% 0.193 32.6)",
+        "tonalRamp": [
+          "#1e0100",
+          "#4a0700",
+          "#7c1300",
+          "#b12101",
+          "#de462a",
+          "#fe755b",
+          "#ffb4a4",
+          "#ffe9e4"
+        ]
+      },
+      "apricot": {
+        "role": "secondary",
+        "displayName": "Apricot Jacket",
+        "canonical": "oklch(78.5% 0.123 59.0)",
+        "tonalRamp": [
+          "#160700",
+          "#3b1c00",
+          "#633402",
+          "#904e00",
+          "#b76e2b",
+          "#dd9151",
+          "#ffb87f",
+          "#ffeadb"
+        ]
+      },
+      "teal": {
+        "role": "secondary",
+        "displayName": "Teal Jacket",
+        "canonical": "oklch(52.6% 0.064 182.8)",
+        "tonalRamp": [
+          "#000f0c",
+          "#012c27",
+          "#084d45",
+          "#316d64",
+          "#538f86",
+          "#76b3a9",
+          "#9ad7cd",
+          "#bffdf2"
+        ]
+      },
+      "forest": {
+        "role": "secondary",
+        "displayName": "Forest Jacket",
+        "canonical": "oklch(42.7% 0.056 169.4)",
+        "tonalRamp": [
+          "#000f09",
+          "#012d21",
+          "#1f4c3d",
+          "#3f6c5c",
+          "#608d7d",
+          "#83b19f",
+          "#a6d5c3",
+          "#cbfbe8"
+        ]
+      },
+      "periwinkle": {
+        "role": "secondary",
+        "displayName": "Periwinkle Jacket",
+        "canonical": "oklch(84.9% 0.050 263.7)",
+        "tonalRamp": [
+          "#030920",
+          "#18243d",
+          "#34425d",
+          "#53617e",
+          "#7383a1",
+          "#95a5c5",
+          "#b9caea",
+          "#e7effe"
+        ]
+      },
+      "salmon": {
+        "role": "tertiary",
+        "displayName": "Salmon Sun",
+        "canonical": "oklch(80.5% 0.108 41.9)",
+        "tonalRamp": [
+          "#1a0400",
+          "#431300",
+          "#6f2907",
+          "#93492c",
+          "#b86b4d",
+          "#de8e6e",
+          "#feb599",
+          "#ffe9e1"
+        ]
+      },
+      "cornsilk": {
+        "role": "tertiary",
+        "displayName": "Cornsilk Sun",
+        "canonical": "oklch(92.9% 0.075 89.9)",
+        "tonalRamp": [
+          "#100a00",
+          "#2f2301",
+          "#524003",
+          "#725f2a",
+          "#94804c",
+          "#b7a36e",
+          "#dcc891",
+          "#ffedbf"
+        ]
+      },
+      "brick": {
+        "role": "tertiary",
+        "displayName": "Brick Hill",
+        "canonical": "oklch(54.6% 0.154 30.1)",
+        "tonalRamp": [
+          "#1f0000",
+          "#4c0200",
+          "#7f0801",
+          "#a73325",
+          "#ce5747",
+          "#f67b69",
+          "#ffb3a6",
+          "#ffe9e5"
+        ]
+      },
+      "deepteal": {
+        "role": "tertiary",
+        "displayName": "Deep Teal Sun",
+        "canonical": "oklch(34.3% 0.044 211.3)",
+        "tonalRamp": [
+          "#000e11",
+          "#022b31",
+          "#234850",
+          "#426870",
+          "#638a92",
+          "#85adb5",
+          "#a9d2da",
+          "#cff7ff"
+        ]
+      },
+      "mint": {
+        "role": "tertiary",
+        "displayName": "Mint Hill",
+        "canonical": "oklch(90.6% 0.058 123.5)",
+        "tonalRamp": [
+          "#080e00",
+          "#1f2905",
+          "#3c4723",
+          "#5b6742",
+          "#7b8862",
+          "#9eac84",
+          "#c1d0a7",
+          "#e6f6cb"
+        ]
+      },
+      "sage": {
+        "role": "tertiary",
+        "displayName": "Sage Hill",
+        "canonical": "oklch(90.8% 0.056 126.3)",
+        "tonalRamp": [
+          "#070e00",
+          "#1e2a08",
+          "#3a4726",
+          "#596744",
+          "#7a8964",
+          "#9cac86",
+          "#c0d0a9",
+          "#e5f6ce"
+        ]
+      },
+      "butter": {
+        "role": "tertiary",
+        "displayName": "Butter Sun",
+        "canonical": "oklch(93.9% 0.065 100.9)",
+        "tonalRamp": [
+          "#0e0b00",
+          "#2b2500",
+          "#4a4314",
+          "#696235",
+          "#8b8455",
+          "#aea777",
+          "#d2cb9a",
+          "#f8f1be"
+        ]
+      },
+      "navy": {
+        "role": "tertiary",
+        "displayName": "Back-of-Series Navy (deepest cobalt print, not a sampled cover colour)",
+        "canonical": "oklch(23.9% 0.084 268.6)",
+        "tonalRamp": [
+          "#02042e",
+          "#14214d",
+          "#2f3f6e",
+          "#4d5f91",
+          "#6d80b5",
+          "#8fa3da",
+          "#b3c8fe",
+          "#e8eefe"
+        ]
+      },
+      "obi": {
+        "role": "neutral",
+        "displayName": "Obi White",
+        "canonical": "oklch(97.2% 0.007 106.5)",
+        "tonalRamp": [
+          "#0b0b08",
+          "#252522",
+          "#42423e",
+          "#61615d",
+          "#83837e",
+          "#a5a5a1",
+          "#c9c9c5",
+          "#efefea"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(18.8% 0.010 276.4)",
+        "tonalRamp": [
+          "#0a0b10",
+          "#24252a",
+          "#404248",
+          "#5f6167",
+          "#808289",
+          "#a3a5ac",
+          "#c7c9d0",
+          "#eceef6"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "oklch(42.2% 0.017 276.7)",
+        "tonalRamp": [
+          "#090b12",
+          "#23242d",
+          "#3f414b",
+          "#5e616b",
+          "#7f828d",
+          "#a2a4b0",
+          "#c6c8d4",
+          "#ebeefa"
+        ]
+      },
+      "slip-rule": {
+        "role": "neutral",
+        "displayName": "Slip Rule",
+        "canonical": "oklch(88.0% 0.011 106.6)",
+        "tonalRamp": [
+          "#0c0b07",
+          "#26251f",
+          "#42423c",
+          "#62625b",
+          "#83837c",
+          "#a6a69e",
+          "#cacac2",
+          "#efefe7"
+        ]
+      },
+      "slip-chip": {
+        "role": "neutral",
+        "displayName": "Slip Chip",
+        "canonical": "oklch(93.2% 0.009 106.6)",
+        "tonalRamp": [
+          "#0c0b07",
+          "#252520",
+          "#42423d",
+          "#62625c",
+          "#83837c",
+          "#a5a59f",
+          "#cacac3",
+          "#efefe8"
+        ]
+      },
+      "paper-clear-bg": {
+        "role": "neutral",
+        "displayName": "ReaderPaper Clear",
+        "canonical": "oklch(98.2% 0.004 91.4)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262523",
+          "#434240",
+          "#62615f",
+          "#838280",
+          "#a6a5a2",
+          "#cac9c6",
+          "#efeeeb"
+        ]
+      },
+      "paper-clear-text": {
+        "role": "neutral",
+        "displayName": "ReaderPaper Clear Text",
+        "canonical": "oklch(26.4% 0.007 95.3)",
+        "tonalRamp": [
+          "#0c0b08",
+          "#262521",
+          "#43423e",
+          "#62615d",
+          "#83827d",
+          "#a6a5a0",
+          "#cac9c4",
+          "#f0eee9"
+        ]
+      },
+      "paper-sage-bg": {
+        "role": "neutral",
+        "displayName": "ReaderPaper Sage",
+        "canonical": "oklch(91.7% 0.028 133.7)",
+        "tonalRamp": [
+          "#070e03",
+          "#1f281a",
+          "#3c4536",
+          "#5b6555",
+          "#7c8675",
+          "#9ea997",
+          "#c2cebb",
+          "#e7f3e0"
+        ]
+      },
+      "paper-sage-text": {
+        "role": "neutral",
+        "displayName": "ReaderPaper Sage Text",
+        "canonical": "oklch(30.5% 0.028 146.9)",
+        "tonalRamp": [
+          "#040e05",
+          "#1c291d",
+          "#39463a",
+          "#576658",
+          "#788779",
+          "#9aaa9b",
+          "#becebf",
+          "#e3f4e4"
+        ]
+      },
+      "paper-night-bg": {
+        "role": "neutral",
+        "displayName": "ReaderPaper Night",
+        "canonical": "oklch(25.3% 0.005 174.0)",
+        "tonalRamp": [
+          "#090c0b",
+          "#232625",
+          "#3f4342",
+          "#5f6261",
+          "#808382",
+          "#a2a6a5",
+          "#c6cac9",
+          "#ebefee"
+        ]
+      },
+      "paper-night-text": {
+        "role": "neutral",
+        "displayName": "ReaderPaper Night Text",
+        "canonical": "oklch(89.2% 0.011 136.6)",
+        "tonalRamp": [
+          "#090c08",
+          "#232621",
+          "#3f433e",
+          "#5e635d",
+          "#7f847e",
+          "#a2a7a0",
+          "#c6cbc4",
+          "#ebf0e9"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Vertical Title",
+        "purpose": "每卷竖排书名，Noto Serif SC 900 书名字形子集，font-display: block + preload；改字后运行 node scripts/prepare-fonts.mjs。手机上限 72px。"
+      },
+      "headline": {
+        "displayName": "Obi Lead",
+        "purpose": "腰封主句。手机 clamp(19px, 5.4vw, 23px)。"
+      },
+      "title": {
+        "displayName": "Obi Lead (small)",
+        "purpose": "内容较多的卷的腰封主句。手机 clamp(17px, 4.8vw, 20px)。"
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "基础正文；拉丁字母与数字由 Archivo 排出，中文为 Noto Sans SC。"
+      },
+      "fine": {
+        "displayName": "Obi Fine Print",
+        "purpose": "腰封细字，淡墨，最长 62ch；手机 13px。"
+      },
+      "wordmark": {
+        "displayName": "Archivo Wordmark",
+        "purpose": "版权页与出版单上的 NextVol 字标。"
+      },
+      "code": {
+        "displayName": "Series Code",
+        "purpose": "NV-01…NV-07、NV-DL 竖排书号；Archivo 宽度轴 115。"
+      }
+    },
+    "shadows": [
+      {
+        "name": "plate",
+        "value": "0 0 0 1px rgb(0 0 0 / 0.1), 0 40px 70px -30px rgb(0 0 0 / 0.55), 0 12px 24px -12px rgb(0 0 0 / 0.35)",
+        "purpose": "真实截图版面。"
+      },
+      {
+        "name": "slip",
+        "value": "0 44px 80px -36px rgb(0 0 0 / 0.65), 0 10px 20px -12px rgb(0 0 0 / 0.3)",
+        "purpose": "下载页出版单。"
+      },
+      {
+        "name": "colophon",
+        "value": "0 40px 70px -34px rgb(0 0 0 / 0.7)",
+        "purpose": "第 7 卷版权页卡片。"
+      },
+      {
+        "name": "obi",
+        "value": "0 -1px 0 rgb(0 0 0 / 0.08), 0 -18px 40px -26px rgb(0 0 0 / 0.55)",
+        "purpose": "腰封压在书封上沿。"
+      },
+      {
+        "name": "book",
+        "value": "inset 6px 0 8px -6px rgb(0 0 0 / 0.35), 0 34px 60px -28px rgb(0 0 0 / 0.6), 0 8px 18px -10px rgb(0 0 0 / 0.35)",
+        "purpose": "第 5 卷示例书，内阴影为书脊。"
+      },
+      {
+        "name": "vermilion-lift",
+        "value": "0 14px 28px -14px rgb(0 0 0 / 0.4), inset 0 -2px 0 rgb(0 0 0 / 0.14)",
+        "purpose": "朱红下载按钮。"
+      },
+      {
+        "name": "toc",
+        "value": "0 30px 60px -20px rgb(0 0 0 / 0.45), 0 2px 6px rgb(0 0 0 / 0.12)",
+        "purpose": "手机目录弹层。"
+      },
+      {
+        "name": "curl-css-flap",
+        "value": "drop-shadow(10px -6px 14px rgb(0 0 0 / 0.28))",
+        "purpose": "无 WebGL 时 CSS 折页纸背的投影（filter）。"
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "默认状态过渡（ease-out-quart）。"
+      },
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "入场、印出、展开。"
+      },
+      {
+        "name": "page-turn",
+        "value": "1.2s desktop / 0.95s phone; F power2.inOut, angle 0.8x duration power2.out, radius 0.45x duration power2.out",
+        "purpose": "翻卷；30% 时切换顶栏与目录状态。"
+      },
+      {
+        "name": "page-turn-back",
+        "value": "same duration; F power2.inOut, angle power2.in, radius power3.in",
+        "purpose": "翻回上一卷。"
+      },
+      {
+        "name": "dog-ear-rest",
+        "value": "F 84 / R 6 desktop, F 44 / R 4 phone, angle 45deg",
+        "purpose": "静止书角；落地后延迟 0.6s，以 0.75s power3.out 回到静止。"
+      },
+      {
+        "name": "dog-ear-hover",
+        "value": "F x1.9, R x1.5, angle -0.06rad, 0.4s power3.out",
+        "purpose": "悬停或键盘聚焦书角。"
+      },
+      {
+        "name": "corner-drag-commit",
+        "value": "> 14% of the turn, or a press without movement; settle 0.55s power3.out",
+        "purpose": "拖动书角的提交阈值。"
+      },
+      {
+        "name": "touch-swipe",
+        "value": "horizontal drag commits > 28% or > 0.45px/ms; vertical swipe > 44px or > 0.4px/ms",
+        "purpose": "触摸翻卷。"
+      },
+      {
+        "name": "title-print",
+        "value": "clip-path inset, 0.9s ease-out-expo, second column +0.12s",
+        "purpose": "新卷书名从上往下印出。"
+      },
+      {
+        "name": "art-rise",
+        "value": "translate 60px to 0, 1.1s ease-out-expo",
+        "purpose": "新卷插画从腰封后升起。"
+      },
+      {
+        "name": "obi-in",
+        "value": "translate -101% to 0, 0.85s ease-out-expo",
+        "purpose": "首屏封面腰封滑入。"
+      },
+      {
+        "name": "source-swap",
+        "value": "leaving 0.42s cubic-bezier(0.55, 0, 0.75, 0.2) to translateY 110%; arriving 0.7s ease-out-expo",
+        "purpose": "来源标签页切换截图。"
+      },
+      {
+        "name": "paper-spread",
+        "value": "View Transition, clip-path circle from the chosen strip, 0.75s ease-out-expo",
+        "purpose": "换纸；reduced-motion 或不支持时立即换色。"
+      },
+      {
+        "name": "chrome-tone",
+        "value": "color 0.3-0.45s ease; per-element tone sampled mid-turn (old jacket / flap paper / new jacket)",
+        "purpose": "翻页中顶栏与目录轨道跟随下方颜色。"
+      },
+      {
+        "name": "webgl-upgrade",
+        "value": "first pointermove/pointerdown/touchstart/keydown/wheel, or after 3s; DPR cap 1.5 desktop / 1.25 phone",
+        "purpose": "延迟加载着色器；软件渲染器、省流量、deviceMemory < 4 保留 CSS 折页。"
+      },
+      {
+        "name": "reduced-motion",
+        "value": "flow mode; all transitions and animations 0.01ms",
+        "purpose": "无翻页的原生滚动页面。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "max-width: 767px"
+      },
+      {
+        "name": "tablet-portrait",
+        "value": "min-width: 768px and orientation: portrait"
+      },
+      {
+        "name": "narrow-desktop",
+        "value": "768px to 1023px"
+      },
+      {
+        "name": "desktop",
+        "value": "min-width: 1024px"
+      },
+      {
+        "name": "flow-mode",
+        "value": "no JS, prefers-reduced-motion, innerHeight < 520px or innerWidth < 320px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Download Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "朱红下载胶囊；只用于下载行动。",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">下载 NextVol <span class=\"ds-ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 4v11m-5-5 5 5 5-5M5 20h14\"/></svg></span></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 24px 0 28px;border-radius:999px;background:var(--color-vermilion,#d23a1e);color:#fff;font-family:'NV Latin', 'NV Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;font-size:17px;font-weight:800;text-decoration:none;white-space:nowrap;box-shadow:0 14px 28px -14px rgb(0 0 0 / .4),inset 0 -2px 0 rgb(0 0 0 / .14);transition:transform .25s cubic-bezier(0.25, 1, 0.5, 1),box-shadow .25s cubic-bezier(0.25, 1, 0.5, 1)}.ds-btn-primary .ds-ic{display:inline-flex;transition:transform .35s cubic-bezier(0.16, 1, 0.3, 1)}.ds-btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 34px -16px rgb(0 0 0 / .45),inset 0 -2px 0 rgb(0 0 0 / .14)}.ds-btn-primary:hover .ds-ic{transform:translateY(2px)}.ds-btn-primary:active{transform:translateY(1px) scale(.98)}.ds-btn-primary:focus-visible{outline:2.5px solid #121318;outline-offset:4px}"
+    },
+    {
+      "name": "Release Button (XL)",
+      "kind": "button",
+      "refersTo": "button-primary-xl",
+      "description": "下载页两行主按钮；没有 .apk 时指向发布页并显示外链箭头，有 .apk 时换为下载图标与直链。",
+      "html": "<a class=\"ds-btn-xl\" href=\"#\"><span class=\"ds-stack\"><span>前往发布页</span><small>GitHub Releases</small></span><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M8 16 17 7m-8 0h8v8\"/></svg></a>",
+      "css": ".ds-btn-xl{display:inline-flex;align-items:center;gap:16px;min-height:66px;padding:0 26px 0 30px;border-radius:999px;background:var(--color-vermilion,#d23a1e);color:#fff;font-family:'NV Latin', 'NV Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;font-size:17px;font-weight:800;text-decoration:none;box-shadow:0 14px 28px -14px rgb(0 0 0 / .4),inset 0 -2px 0 rgb(0 0 0 / .14);transition:transform .25s cubic-bezier(0.25, 1, 0.5, 1),box-shadow .25s cubic-bezier(0.25, 1, 0.5, 1)}.ds-btn-xl .ds-stack{display:grid;line-height:1.2;text-align:left}.ds-btn-xl small{font-family:'NV Latin', 'NV Sans', sans-serif;font-size:12px;font-weight:600;font-stretch:105%}.ds-btn-xl:hover{transform:translateY(-2px)}.ds-btn-xl:active{transform:translateY(1px) scale(.98)}.ds-btn-xl:focus-visible{outline:2.5px solid #121318;outline-offset:4px}"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "腰封上的次要行动，发丝描边胶囊。",
+      "html": "<a class=\"ds-btn-quiet\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2.6a9.4 9.4 0 0 0-2.97 18.32c.47.09.64-.2.64-.45v-1.6c-2.62.57-3.17-1.26-3.17-1.26-.43-1.09-1.05-1.38-1.05-1.38-.85-.58.07-.57.07-.57.94.07 1.44.97 1.44.97.84 1.44 2.2 1.02 2.73.78.09-.61.33-1.02.6-1.26-2.09-.24-4.29-1.05-4.29-4.65 0-1.03.37-1.87.97-2.53-.1-.24-.42-1.2.09-2.5 0 0 .79-.25 2.59.97a9 9 0 0 1 4.71 0c1.8-1.22 2.59-.97 2.59-.97.51 1.3.19 2.26.09 2.5.6.66.97 1.5.97 2.53 0 3.61-2.2 4.4-4.3 4.64.34.29.64.87.64 1.75v2.6c0 .25.17.55.65.45A9.4 9.4 0 0 0 12 2.6Z\"/></svg> 查看源码</a>",
+      "css": ".ds-btn-quiet{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 20px;border-radius:999px;color:#121318;font-family:'NV Latin', 'NV Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;font-size:16px;font-weight:700;text-decoration:none;box-shadow:inset 0 0 0 1.5px rgb(18 19 24 / .28);transition:box-shadow .25s cubic-bezier(0.25, 1, 0.5, 1),transform .25s cubic-bezier(0.25, 1, 0.5, 1)}.ds-btn-quiet:hover{box-shadow:inset 0 0 0 1.5px #121318}.ds-btn-quiet:active{transform:translateY(1px) scale(.98)}.ds-btn-quiet:focus-visible{outline:2.5px solid #121318;outline-offset:4px}"
+    },
+    {
+      "name": "Volume Jacket",
+      "kind": "custom",
+      "refersTo": "obi-band",
+      "description": "一卷：满版书封、太阳、竖排书名与卷号章、无框截图版面，下压白色腰封。",
+      "html": "<section class=\"ds-vol\"><div class=\"ds-jacket\"><span class=\"ds-sun\"></span><figure class=\"ds-plate\"></figure><div class=\"ds-title\"><h2 class=\"ds-vtitle\"><span>下一卷，</span><span>就在手边。</span></h2><p class=\"ds-spine\"><span class=\"ds-roundel\">1</span><span class=\"ds-code\">NV-01</span></p></div></div><div class=\"ds-obi\"><p class=\"ds-lead\">轻小说、阅读 3.0 书源、本地藏书，都在 NextVol 里接着读。</p><p class=\"ds-fine\">Android 7.0 及以上 · 开源项目 · Apache-2.0</p></div></section>",
+      "css": ".ds-vol{display:grid;grid-template-rows:300px auto;overflow:hidden;background:#213fc4;color:#fff;font-family:'NV Latin', 'NV Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif}.ds-jacket{position:relative;overflow:hidden}.ds-sun{position:absolute;left:40%;top:55%;width:220px;aspect-ratio:1;border-radius:50%;background:#fba888;translate:-50% -50%}.ds-plate{position:absolute;margin:0;left:48px;top:24px;width:150px;aspect-ratio:9/16;border-radius:3px;background:#dce8d5;rotate:-4deg;box-shadow:0 0 0 1px rgb(0 0 0 / .1),0 40px 70px -30px rgb(0 0 0 / .55),0 12px 24px -12px rgb(0 0 0 / .35)}.ds-title{position:absolute;top:8px;right:24px;display:flex;flex-direction:row-reverse;gap:12px}.ds-vtitle{margin:0;writing-mode:vertical-rl;font-family:'NV Title', 'Noto Serif CJK SC', 'Source Han Serif SC', 'Songti SC', serif;font-weight:900;font-size:44px;line-height:1.16;letter-spacing:.03em}.ds-vtitle span{display:block}.ds-spine{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px}.ds-roundel{display:grid;place-items:center;width:40px;aspect-ratio:1;border-radius:50%;border:2px solid currentColor;font-family:'NV Latin', 'NV Sans', sans-serif;font-weight:800;font-stretch:78%;font-size:20px}.ds-code{writing-mode:vertical-rl;font-family:'NV Latin', 'NV Sans', sans-serif;font-size:11px;font-weight:650;font-stretch:115%;letter-spacing:.22em;color:#d6defb}.ds-obi{position:relative;padding:22px 28px 26px;background:#f6f6f1;color:#121318;box-shadow:0 -1px 0 rgb(0 0 0 / .08),0 -18px 40px -26px rgb(0 0 0 / .55)}.ds-lead{margin:0;font-weight:900;font-size:22px;line-height:1.34;text-wrap:balance}.ds-fine{margin:10px 0 0;font-size:14px;line-height:1.65;color:#4b4d57}"
+    },
+    {
+      "name": "Screen Plate",
+      "kind": "card",
+      "refersTo": "",
+      "description": "真实 Android 截图的无框插画版面：3px 圆角、发丝边、长投影，没有手机外壳。",
+      "html": "<figure class=\"ds-screen\"><div class=\"ds-screen-img\"></div></figure>",
+      "css": ".ds-screen{margin:0;width:180px;aspect-ratio:9/16;border-radius:3px;rotate:-4deg;box-shadow:0 0 0 1px rgb(0 0 0 / .1),0 40px 70px -30px rgb(0 0 0 / .55),0 12px 24px -12px rgb(0 0 0 / .35)}.ds-screen-img{width:100%;height:100%;border-radius:inherit;background:#dce8d5}"
+    },
+    {
+      "name": "Source Tabs",
+      "kind": "chip",
+      "refersTo": "tab",
+      "description": "腰封内的来源标签页；圆点描边为未选，实心为选中。",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\">阅读 3.0 书源</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">本地藏书</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">轻小说</button></div>",
+      "css": ".ds-tabs{display:grid;gap:6px;padding:16px;background:#f6f6f1}.ds-tab{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 18px 0 16px;border:0;border-radius:999px;background:transparent;font-family:'NV Latin', 'NV Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;font-size:16px;font-weight:700;text-align:left;color:#4b4d57;cursor:pointer;transition:color .25s cubic-bezier(0.25, 1, 0.5, 1),background-color .25s cubic-bezier(0.25, 1, 0.5, 1)}.ds-tab::before{content:\"\";width:8px;height:8px;border-radius:50%;box-shadow:inset 0 0 0 1.5px currentColor}.ds-tab:hover{color:#121318;background:rgb(18 19 24 / .06)}.ds-tab[aria-selected=\"true\"]{color:#121318;background:rgb(18 19 24 / .08)}.ds-tab[aria-selected=\"true\"]::before{background:currentColor;box-shadow:none}.ds-tab:focus-visible{outline:2.5px solid currentColor;outline-offset:4px}"
+    },
+    {
+      "name": "Volume Rail",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "左侧目录轨道；当前卷为朱红长横线并显示卷名。",
+      "html": "<nav class=\"ds-rail\"><a href=\"#\" aria-current=\"true\"><span>01</span><span class=\"ds-rl\">封面</span></a><a href=\"#\"><span>02</span><span class=\"ds-rl\">自选来源</span></a><a href=\"#\"><span>03</span><span class=\"ds-rl\">按卷追读</span></a></nav>",
+      "css": ".ds-rail{display:grid;gap:2px;padding:20px;background:#213fc4}.ds-rail a{display:flex;align-items:center;gap:10px;min-height:40px;color:#d6defb;text-decoration:none;font-family:'NV Latin', 'NV Sans', sans-serif;font-size:12px;font-weight:600;font-stretch:110%;letter-spacing:.08em;transition:color .3s cubic-bezier(0.25, 1, 0.5, 1)}.ds-rail a::before{content:\"\";width:28px;height:2px;border-radius:2px;background:currentColor;opacity:.55;transform:scaleX(.5);transform-origin:left;transition:transform .45s cubic-bezier(0.16, 1, 0.3, 1)}.ds-rl{font-family:'NV Latin', 'NV Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;font-size:13px;letter-spacing:.02em;opacity:0;transform:translateX(-6px);transition:opacity .25s cubic-bezier(0.25, 1, 0.5, 1),transform .35s cubic-bezier(0.16, 1, 0.3, 1)}.ds-rail:hover .ds-rl,.ds-rail a[aria-current] .ds-rl{opacity:1;transform:none}.ds-rail a:hover,.ds-rail a[aria-current]{color:#fff}.ds-rail a[aria-current]::before{transform:none;height:3px;opacity:1;background:#d23a1e}.ds-rail a:focus-visible{outline:2.5px solid currentColor;outline-offset:4px}"
+    },
+    {
+      "name": "Release Slip",
+      "kind": "card",
+      "refersTo": "release-slip",
+      "description": "下载页出版单：版本行始终存在，状态行预留两行。",
+      "html": "<article class=\"ds-slip\"><header><h2>NextVol <span>Android 版</span></h2></header><p class=\"ds-status\">正式安装包还没有发布，发布后这里会自动显示下载按钮。</p><dl class=\"ds-table\"><div><dt>版本</dt><dd>即将发布</dd></div><div><dt>系统要求</dt><dd>Android 7.0 及以上</dd></div><div><dt>许可</dt><dd>Apache-2.0 开源</dd></div></dl><button class=\"ds-chip\">重新查询</button></article>",
+      "css": ".ds-slip{width:440px;padding:30px 30px 24px;background:#f6f6f1;color:#121318;border-radius:4px;rotate:-1.5deg;font-family:'NV Latin', 'NV Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;box-shadow:0 44px 80px -36px rgb(0 0 0 / .65),0 10px 20px -12px rgb(0 0 0 / .3)}.ds-slip h2{margin:0;font-family:'NV Latin', 'NV Sans', sans-serif;font-weight:800;font-stretch:86%;font-size:42px;line-height:1;letter-spacing:-.02em}.ds-slip h2 span{font-family:'NV Latin', 'NV Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;font-size:15px;font-weight:700;letter-spacing:0;color:#4b4d57;margin-left:6px}.ds-status{margin:10px 0 0;font-size:14px;line-height:1.6;color:#3b3d46;min-height:3.2em}.ds-table{margin:16px 0 0;border-top:2px solid #121318}.ds-table>div{display:grid;grid-template-columns:6.2em 1fr;gap:12px;align-items:center;min-height:40px;padding:6px 0;border-bottom:1px solid #d8d8d0;font-size:14px}.ds-table dt{color:#4b4d57}.ds-table dd{margin:0;font-weight:700}.ds-chip{margin-top:14px;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:0;border-radius:999px;background:#e9e9e2;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:background-color .2s cubic-bezier(0.25, 1, 0.5, 1)}.ds-chip:hover{background:#deded6}.ds-chip:focus-visible{outline:2.5px solid #121318;outline-offset:4px}"
+    },
+    {
+      "name": "Paper Strips",
+      "kind": "chip",
+      "refersTo": "",
+      "description": "第 4 卷的纸张选择：真实 ReaderPaper 颜色的小纸样，选中上移并加圈。",
+      "html": "<div class=\"ds-strips\"><button class=\"ds-strip\" aria-pressed=\"false\"><span class=\"ds-sw ds-clear\">Aa</span><span class=\"ds-nm\">清纸</span></button><button class=\"ds-strip\" aria-pressed=\"true\"><span class=\"ds-sw ds-sage\">Aa</span><span class=\"ds-nm\">豆绿</span></button><button class=\"ds-strip\" aria-pressed=\"false\"><span class=\"ds-sw ds-night\">Aa</span><span class=\"ds-nm\">夜读</span></button></div>",
+      "css": ".ds-strips{display:flex;gap:12px;padding:24px 16px 12px;background:#263327}.ds-strip{display:grid;justify-items:center;gap:6px;padding:6px 6px 4px;border:0;border-radius:14px;background:transparent;color:#dce8d5;font-family:'NV Latin', 'NV Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;font-size:14px;font-weight:700;cursor:pointer}.ds-sw{display:grid;place-items:center;width:64px;height:84px;border-radius:6px 6px 4px 4px;font-size:20px;box-shadow:0 0 0 1px rgb(0 0 0 / .12),0 8px 16px -10px rgb(0 0 0 / .6);transition:transform .4s cubic-bezier(0.16, 1, 0.3, 1),box-shadow .3s cubic-bezier(0.25, 1, 0.5, 1)}.ds-clear{background:#faf9f6;color:#262521}.ds-sage{background:#dce8d5;color:#263327}.ds-night{background:#202322;color:#d8ddd6;box-shadow:0 0 0 1px rgb(255 255 255 / .22),0 8px 16px -10px rgb(0 0 0 / .6)}.ds-nm{color:#c3d4bb}.ds-strip:hover .ds-sw{transform:translateY(-4px)}.ds-strip[aria-pressed=\"true\"] .ds-sw{transform:translateY(-8px);box-shadow:0 0 0 2.5px #dce8d5,0 14px 22px -12px rgb(0 0 0 / .7)}.ds-strip[aria-pressed=\"true\"] .ds-nm{color:#dce8d5}.ds-strip:focus-visible{outline:2.5px solid currentColor;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "文库本腰封（Bunko & Obi）",
+    "overview": "NextVol 的官网是一套轻小说文库本。首页每一个全屏页面都是系列里的下一卷：整面满版的书封色（drenched jacket），右侧一列或两列竖排的重磅明朝体书名，真实的 Android 界面截图作为无框的封面插画压在书封上，下沿被一条白色腰封（obi）压住——访客所有的行动都发生在腰封上。卷与卷之间用一次真实的翻页切换：Three.js 着色器在真实 HTML 之上画出卷曲的书页，旧书封在折痕处被裁切，下一卷完整地躺在下面。左下角永远折着一个书角，露出下一卷的颜色和卷号；它可以悬停、聚焦、拖动、点击。`/download/` 是这套书附带的一张出版单（release slip）。\n\n密度是书店平台上的一本书，而不是网页：一屏只说一件事，书名和插画占满封面，说明文字只在腰封里出现。色彩全部来自 NextVol 自己的 CC0 示例书封，每卷一色、满版铺开；朱红只留给「下载」和「当前卷」。字体是三层：竖排书名用 Noto Serif SC 900，腰封与正文用 Noto Sans SC，卷号、编码、数字和所有拉丁字母用 Archivo 窄宽可变字。\n\n已确认的拒绝：分栏英雄区、手机外壳样机、成排功能卡片。截图永远是印在书封上的插画版面，不是装在手机里的屏幕。",
+    "keyCharacteristics": [
+      "每屏一卷，满版书封色，卷号 NV-01…NV-07，下载页为 NV-DL。",
+      "竖排重磅明朝书名，靠右排版，旁附圆形卷号章与竖排编码。",
+      "真实 Android 截图作无框插画版面，下沿藏入腰封之下。",
+      "白色腰封承载全部文案与行动；第 4 卷腰封跟随读者选的纸张。",
+      "真实书页卷曲翻卷（WebGL 着色器，CSS 折页兜底），左下角书角预告下一卷。",
+      "朱红只出现在下载行动与当前卷标记上。"
+    ],
+    "rules": [
+      {
+        "name": "The One Vermilion Rule",
+        "body": "朱红只属于下载行动和「当前卷」标记。任何新界面若想用朱红做强调、装饰或状态，答案都是不。",
+        "section": "colors"
+      },
+      {
+        "name": "The Sampled Series Rule",
+        "body": "新卷的书封色必须从 NextVol 自己的 CC0 示例书封取样，或者是取样色的同色深印（如 navy 之于 cobalt），并在本文件写明来源。不引入书封之外的新色相。",
+        "section": "colors"
+      },
+      {
+        "name": "The Reader's Paper Rule",
+        "body": "第 4 卷的书封、太阳、山丘和腰封全部跟随读者选择的纸张；腰封反相为纸张文字色。纸张值只能取自应用的 `ReaderPaper`，不做网站专用的近似色。",
+        "section": "colors"
+      },
+      {
+        "name": "The Vertical Ming Rule",
+        "body": "衬线体只用于竖排书名。不在横排标题、正文或按钮里用明朝体；新增书名必须重切子集。",
+        "section": "typography"
+      },
+      {
+        "name": "The Printed Code Rule",
+        "body": "卷号、书号、版本号、校验值和步骤序号用 Archivo 并调整宽度轴；中文永远不用 Archivo 的宽度做装饰。",
+        "section": "typography"
+      },
+      {
+        "name": "The Under-the-Obi Rule",
+        "body": "插画的下沿永远藏进腰封之下，书名永远在腰封之上结束。任何新卷的截图、书本或纸页都要从书封伸进腰封背后，而不是悬浮在书封中间。",
+        "section": "layout"
+      },
+      {
+        "name": "The Dog-Ear Reserve Rule",
+        "body": "左下角留给书角。新内容不得进入书角热区（桌面 190px、手机 100px 的三角）；手机腰封底部的 76px 不放任何东西。",
+        "section": "layout"
+      },
+      {
+        "name": "The Paper-on-Jacket Rule",
+        "body": "只有「放在书封上的纸」才有投影，书封本身和腰封上的元素是印刷平面。新增元素先问：它是一张纸吗？不是就不投影。",
+        "section": "elevation"
+      },
+      {
+        "name": "The Plates-Not-Phones Rule",
+        "body": "真实截图是无框的插画版面：3px 圆角、发丝边、投影，没有手机边框、刘海、状态栏外壳或大圆角屏幕。",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** 每卷用一种取样书封色满版铺开，配一轮太阳和一道山丘，并在本文件写明颜色来源。",
+      "**Do** 把书名竖排在右侧，用 NV Title 900，并在改字后运行 `node scripts/prepare-fonts.mjs`。",
+      "**Do** 把真实 Android 截图作为无框版面（3px 圆角、发丝边、长投影），小角度旋转，下沿藏进腰封。",
+      "**Do** 把所有文案和行动放进腰封；腰封用腰封白与墨，第 4 卷跟随纸张。",
+      "**Do** 卷号、书号、版本和数字用 Archivo，并通过 wdth 轴调整宽窄。",
+      "**Do** 在手机上为书角保留腰封底部 76px，把卷号章与编码放到书名上方。",
+      "**Do** 保证流式模式（无 JS、reduced-motion、矮视口）是同一套书封的完整原生滚动页面。",
+      "**Do** 让出版单的版本行始终存在、状态行固定两行，在 static / loading / none / error / ready 之间切换时不移动版面。",
+      "**Do** 下载页的安装步骤用带横线的行，不分栏成卡片。",
+      "**Do** 每张上线的位图都带来源：WebP 用同名 `.json` 旁注文件，PNG 写入 tEXt 块。"
+    ],
+    "donts": [
+      "**Don't** 把朱红用在下载行动和当前卷标记以外的任何地方。",
+      "**Don't** 给截图加手机外壳、边框或大圆角屏幕样机。",
+      "**Don't** 做分栏英雄区或成排的功能卡片；一屏只放一卷。",
+      "**Don't** 引入书封取样之外的新色相，或给第 4 卷编网站专用的纸张色。",
+      "**Don't** 用明朝体排横排文字，或用系统宋体顶替竖排书名。",
+      "**Don't** 让任何内容进入左下角书角热区。",
+      "**Don't** 在 GitHub Releases 还没有 .apk 时给出猜测的下载地址；先指向发布页。",
+      "**Don't** 用硬边偏移阴影、毛玻璃、发光或渐变字。"
+    ]
+  }
+}

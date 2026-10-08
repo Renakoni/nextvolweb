@@ -1,0 +1,32 @@
+---
+interface Props {
+  image: string;
+  alt: string;
+  class?: string;
+  eager?: boolean;
+  sizes?: string;
+  [key: `data-${string}`]: string | undefined;
+}
+const {
+  image,
+  alt,
+  class: className = "",
+  eager = false,
+  sizes = "(max-width: 767px) 48vw, 26vw",
+  ...rest
+} = Astro.props;
+---
+
+<figure class={`screen ${className}`} {...rest}>
+  <img
+    src={`/images/${image}.webp`}
+    srcset={`/images/${image}-440.webp 440w, /images/${image}.webp 720w`}
+    sizes={sizes}
+    width="720"
+    height="1280"
+    alt={alt}
+    loading={eager ? "eager" : "lazy"}
+    fetchpriority={eager ? "high" : "auto"}
+    decoding="async"
+  />
+</figure>

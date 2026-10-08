@@ -1,0 +1,336 @@
+---
+import Base from "../layouts/Base.astro";
+import Volume from "../components/Volume.astro";
+import Screen from "../components/Screen.astro";
+import Icon from "../components/Icon.astro";
+import { project, issues, volumes, sources, papers, covers, questions } from "../data/site";
+---
+
+<Base
+  page="home"
+  title="NextVol · 下一卷，就在手边"
+  description="NextVol 是 Android 小说阅读应用。轻小说按卷追读、阅读 3.0 文本书源、本地 EPUB 与 TXT，配上属于你的纸张。"
+>
+  <header class="chrome" id="chrome">
+    <a class="brand" href="#cover" data-goto="0">
+      <img src="/images/app-icon-64.webp" width="32" height="32" alt="" />
+      <span class="brand-name">NextVol</span>
+      <span class="brand-sub">Android 小说阅读器</span>
+    </a>
+    <div class="chrome-actions">
+      <button class="vol-switch" type="button" popovertarget="toc">
+        <span class="sr-only">目录，当前</span>
+        <span class="vol-switch-now"><span class="nv">NV-</span><b data-vol-now>01</b></span>
+        <span class="vol-switch-total">/ 07</span>
+        <Icon name="chevron" size={16} />
+      </button>
+      <a class="chrome-link chrome-github" href={project} target="_blank" rel="noopener noreferrer">
+        <Icon name="github" size={18} />
+        <span>GitHub</span>
+      </a>
+      <a class="btn-chrome" href="/download/">
+        下载
+        <Icon name="download" size={17} />
+      </a>
+    </div>
+  </header>
+
+  <nav class="rail" aria-label="目录">
+    <ol>
+      {
+        volumes.map((vol, i) => (
+          <li>
+            <a href={`#${vol.id}`} data-goto={i} aria-current={i === 0 ? "true" : undefined}>
+              <span class="rail-num">{String(i + 1).padStart(2, "0")}</span>
+              <span class="rail-label">{vol.label}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </nav>
+
+  <div class="toc" id="toc" popover>
+    <p class="toc-head">NextVol 文库 · 全 7 卷</p>
+    <ol>
+      {
+        volumes.map((vol, i) => (
+          <li>
+            <a href={`#${vol.id}`} data-goto={i} data-close-toc aria-current={i === 0 ? "true" : undefined}>
+              <span class="toc-num">{String(i + 1).padStart(2, "0")}</span>
+              <span class="toc-label">{vol.label}</span>
+              <span class="toc-title">{vol.title.join("")}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+
+  <main id="main" class="deck-stage">
+    <Volume index={0}>
+      <Screen
+        slot="art"
+        class="screen-cover"
+        image="reader-sage"
+        alt="NextVol 阅读界面：豆绿纸张上的原创示例故事《风经过的地方》"
+        eager
+        sizes="(max-width: 767px) 52vw, 30vw"
+      />
+      <Fragment slot="obi">
+        <div class="obi-copy">
+          <p class="obi-lead">
+            轻小说、阅读 3.0 书源、本地藏书，<br class="lead-break" />都在 NextVol 里接着读。
+          </p>
+          <p class="obi-fine">Android 7.0 及以上 · 开源项目 · Apache-2.0</p>
+        </div>
+        <div class="obi-actions">
+          <a class="btn btn-primary" href="/download/">
+            下载 NextVol
+            <Icon name="download" />
+          </a>
+          <a class="btn btn-quiet" href={project} target="_blank" rel="noopener noreferrer">
+            <Icon name="github" size={18} />
+            查看源码
+          </a>
+        </div>
+        <p class="turn-hint" aria-hidden="true">
+          <span class="hint-wheel">滚动翻到下一卷</span><span class="hint-touch">上滑翻到下一卷</span>
+          <span class="hint-or">· 也可以拖动书角</span>
+        </p>
+      </Fragment>
+    </Volume>
+
+    <Volume index={1} flip>
+      <div slot="art" class="source-art">
+        {
+          sources.map((source, i) => (
+            <Screen
+              class={`screen-source ${i === 0 ? "is-shown" : ""}`}
+              image={source.image}
+              alt={source.alt}
+              data-source-image={source.id}
+            />
+          ))
+        }
+      </div>
+      <Fragment slot="obi">
+        <div class="obi-tabs">
+          <div class="tabs" role="tablist" aria-label="书从哪里来">
+            {
+              sources.map((source, i) => (
+                <button
+                  class="tab"
+                  type="button"
+                  role="tab"
+                  id={`tab-${source.id}`}
+                  aria-selected={i === 0 ? "true" : "false"}
+                  aria-controls={`panel-${source.id}`}
+                  tabindex={i === 0 ? 0 : -1}
+                  data-source={source.id}
+                >
+                  {source.name}
+                </button>
+              ))
+            }
+          </div>
+          <div class="tab-panels">
+            {
+              sources.map((source, i) => (
+                <div
+                  class="tab-panel"
+                  role="tabpanel"
+                  id={`panel-${source.id}`}
+                  aria-labelledby={`tab-${source.id}`}
+                  data-panel={source.id}
+                  hidden={i !== 0}
+                >
+                  <p class="obi-lead obi-lead-sm">{source.lead}</p>
+                  <p class="obi-fine">{source.fine}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </Fragment>
+    </Volume>
+
+    <Volume index={2}>
+      <div slot="art" class="progress-art">
+        <Screen class="screen-back" image="directory" alt="NextVol 阅读器里的章节选择面板，可搜索章节名或编号" />
+        <Screen
+          class="screen-front"
+          image="book-detail"
+          alt="NextVol 书籍详情：目录、上次阅读位置与“继续阅读”按钮"
+        />
+      </div>
+      <Fragment slot="obi">
+        <div class="obi-copy">
+          <p class="obi-lead">
+            分卷目录、已读进度和书签，都替你记着；<br class="lead-break" />点「继续阅读」，回到上次读到的地方。
+          </p>
+        </div>
+        <ul class="spec-list" aria-label="相关功能">
+          <li>分卷目录</li>
+          <li>章节进度</li>
+          <li>书签</li>
+          <li>章节搜索</li>
+          <li>离线缓存</li>
+        </ul>
+      </Fragment>
+    </Volume>
+
+    <Volume index={3} flip class="paper" data-paper="sage">
+      <div slot="art" class="paper-art">
+        <article class="page" id="paper-page" aria-labelledby="page-chapter">
+          <header class="page-head">
+            <p class="page-book">风经过的地方</p>
+            <h3 id="page-chapter">风来的清晨</h3>
+          </header>
+          <div class="page-body">
+            <p>清晨六点，小镇还没有醒来。车站旁的面包店亮起了第一盏灯，风从街角转过来，带着刚出炉的麦香。</p>
+            <p>我把车票夹进书里，沿着海边的小路慢慢往前走。今天没有必须赶上的列车，也没有非去不可的地方。</p>
+            <p>昨天借来的那本书还剩下最后一章。书页边缘有一点卷起，像一片准备离开枝头的叶子。我一直舍不得读完。</p>
+            <p>我在长椅上坐下，把那张车票放回口袋，翻开了下一页。阳光刚好落在第一行字上。</p>
+          </div>
+          <footer class="page-foot">
+            <span>第一章 · 节选</span>
+            <span data-paper-name>豆绿</span>
+          </footer>
+        </article>
+      </div>
+      <Fragment slot="obi">
+        <div class="paper-picker" role="group" aria-label="换一张阅读纸张">
+          {
+            papers.map((paper) => (
+              <button
+                class={`strip strip-${paper.id}`}
+                type="button"
+                data-paper-choice={paper.id}
+                aria-pressed={paper.id === "sage" ? "true" : "false"}
+                aria-controls="paper-page"
+              >
+                <span class="strip-swatch" aria-hidden="true">Aa</span>
+                <span class="strip-name">{paper.name}</span>
+              </button>
+            ))
+          }
+        </div>
+        <div class="obi-copy">
+          <p class="obi-lead obi-lead-sm" data-paper-note aria-live="polite">豆绿 · 给眼睛留一点绿意</p>
+          <p class="obi-fine">字体、字号、行距、边距，翻页或连续滚动，简繁转换，都按你的习惯来。</p>
+        </div>
+      </Fragment>
+    </Volume>
+
+    <Volume index={4}>
+      <div slot="art" class="shelf-art">
+        {
+          covers.map((cover, i) => (
+            <figure class={`book book-${i}`}>
+              <img src={`/images/${cover.file}.webp`} width="480" height="680" alt={`原创示例书《${cover.name}》封面`} loading="lazy" decoding="async" />
+            </figure>
+          ))
+        }
+      </div>
+      <Fragment slot="obi">
+        <div class="obi-copy">
+          <p class="obi-lead obi-lead-sm">书架分类、排序、置顶，收藏整整齐齐；可用章节下载后，离线也能读。</p>
+          <p class="obi-fine">图中书籍为原创示例内容，不随应用附带。</p>
+        </div>
+        <dl class="obi-notes">
+          <div>
+            <dt>听书</dt>
+            <dd>配置系统语音引擎或音源后朗读，可调语速、定时停止。</dd>
+          </div>
+          <div>
+            <dt>备份</dt>
+            <dd>书架、进度、书签和设置，打包成一个备份文件。</dd>
+          </div>
+          <div>
+            <dt>导出</dt>
+            <dd>把书导出为 EPUB，带去别的阅读器。</dd>
+          </div>
+        </dl>
+      </Fragment>
+    </Volume>
+
+    <Volume index={5} flip>
+      <div slot="art" class="faq-art">
+        <div class="faq" data-scroll>
+          {
+            questions.map((item, i) => (
+              <details name="faq" open={i === 0}>
+                <summary>
+                  <span class="faq-num" aria-hidden="true">{i + 1}</span>
+                  <span class="faq-q">{item.q}</span>
+                  <Icon name="chevron" size={18} class="faq-chevron" />
+                </summary>
+                <p>{item.a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+      <Fragment slot="obi">
+        <div class="obi-copy">
+          <p class="obi-lead obi-lead-sm">还没找到答案？</p>
+          <p class="obi-fine">到 GitHub 提一个 Issue，问题和建议都会被看到。</p>
+        </div>
+        <div class="obi-actions">
+          <a class="btn btn-ink" href={issues} target="_blank" rel="noopener noreferrer">
+            去 GitHub 提问
+            <Icon name="external" />
+          </a>
+        </div>
+      </Fragment>
+    </Volume>
+
+    <Volume index={6}>
+      <div slot="art" class="colophon-art">
+        <div class="colophon">
+          <p class="colophon-name">NextVol</p>
+          <p class="colophon-sub">Android 小说阅读器</p>
+          <dl>
+            <div><dt>平台</dt><dd>Android 7.0 及以上</dd></div>
+            <div><dt>源码版本</dt><dd>1.3.0</dd></div>
+            <div><dt>许可</dt><dd>Apache-2.0</dd></div>
+            <div>
+              <dt>源码</dt>
+              <dd><a href={project} target="_blank" rel="noopener noreferrer">github.com/Renakoni/nextvol</a></dd>
+            </div>
+            <div>
+              <dt>反馈</dt>
+              <dd><a href={issues} target="_blank" rel="noopener noreferrer">GitHub Issues</a></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <Fragment slot="obi">
+        <div class="obi-copy">
+          <p class="obi-lead">准备好了，就带上 NextVol。</p>
+          <nav class="obi-links" aria-label="项目链接">
+            <a href={`${project}/releases`} target="_blank" rel="noopener noreferrer">发布记录</a>
+            <a href={issues} target="_blank" rel="noopener noreferrer">问题反馈</a>
+            <a href="/licenses/fonts-OFL.txt">字体许可</a>
+            <a href="#cover" data-goto="0">回到封面</a>
+          </nav>
+        </div>
+        <div class="obi-actions">
+          <a class="btn btn-primary" href="/download/">
+            下载 NextVol
+            <Icon name="download" />
+          </a>
+        </div>
+      </Fragment>
+    </Volume>
+  </main>
+
+  <button class="corner-hotspot" type="button" hidden aria-label="翻到下一卷：自选来源"></button>
+  <div class="curl-layer" aria-hidden="true"></div>
+  <p class="sr-only" aria-live="polite" data-announce></p>
+
+  <script>
+    import "../scripts/home";
+  </script>
+</Base>

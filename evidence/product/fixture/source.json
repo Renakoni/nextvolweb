@@ -1,0 +1,41 @@
+{
+  "bookSourceUrl": "http://127.0.0.1:4174",
+  "bookSourceName": "纸间书房",
+  "bookSourceType": 0,
+  "bookSourceGroup": "原创故事",
+  "enabled": true,
+  "enabledExplore": true,
+  "searchUrl": "http://127.0.0.1:4174/search?q={{key}}",
+  "exploreUrl": "原创故事::http://127.0.0.1:4174/search",
+  "ruleSearch": {
+    "bookList": ".book",
+    "name": "h2@text",
+    "author": ".author@text",
+    "bookUrl": "a@href",
+    "coverUrl": "img@src",
+    "intro": ".intro@text"
+  },
+  "ruleExplore": {
+    "bookList": ".book",
+    "name": "h2@text",
+    "author": ".author@text",
+    "bookUrl": "a@href",
+    "coverUrl": "img@src",
+    "intro": ".intro@text"
+  },
+  "ruleBookInfo": {
+    "name": "h1@text",
+    "author": ".author@text",
+    "intro": ".intro@text",
+    "coverUrl": "img@src",
+    "tocUrl": ".toc@href"
+  },
+  "ruleToc": {
+    "chapterList": ".chapter",
+    "chapterName": "a@text",
+    "chapterUrl": "a@href"
+  },
+  "ruleContent": {
+    "content": "article@html"
+  }
+}

@@ -1,0 +1,45 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  page: "home" | "download";
+  vol?: number;
+}
+const { title, description, page, vol = 1 } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN" data-page={page} data-vol={vol} data-paper="sage">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#213fc4" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/social.png" />
+    <meta property="og:image:alt" content="NextVol：下一卷，就在手边。Android 阅读界面与原创示例书封面" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preload" as="font" href="/fonts/noto-serif-sc-title.woff2" type="font/woff2" crossorigin />
+    <script is:inline>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add("js");
+        var calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (d.dataset.page === "home" && !calm && innerHeight >= 520 && innerWidth >= 320) {
+          d.classList.add("deck");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <slot />
+  </body>
+</html>

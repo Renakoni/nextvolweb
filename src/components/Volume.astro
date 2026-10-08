@@ -1,0 +1,66 @@
+---
+import { volumes } from "../data/site";
+
+interface Props {
+  index: number;
+  /** Mirror the hill so neighbouring jackets don't repeat the same silhouette. */
+  flip?: boolean;
+  class?: string;
+  [key: `data-${string}`]: string | undefined;
+}
+const { index, flip = false, class: className = "", ...rest } = Astro.props;
+const vol = volumes[index];
+const number = String(index + 1).padStart(2, "0");
+const longest = Math.max(...vol.title.map((line) => [...line].length));
+const Heading = index === 0 ? "h1" : "h2";
+---
+
+<section
+  class={`vol vol-${vol.id} ${index === 0 ? "is-current" : index === 1 ? "is-under" : ""} ${className}`}
+  id={vol.id}
+  data-index={index}
+  data-label={vol.label}
+  aria-labelledby={`${vol.id}-title`}
+  {...rest}
+>
+  <div class="jacket">
+    <div class={`jacket-art ${flip ? "is-flipped" : ""}`} aria-hidden="true">
+      <span class="sun"></span>
+      <svg class="hill" viewBox="0 0 1600 1000" preserveAspectRatio="none">
+        <path
+          class="hill-fill"
+          d="M0 1000V585C150 455 300 400 455 455s300 300 530 318c210 16 400-110 615-205v442Z"
+        />
+        <path
+          class="hill-line"
+          d="M0 735c180-110 360-140 545-75s330 220 560 214c200-6 350-120 495-170"
+          vector-effect="non-scaling-stroke"
+        />
+      </svg>
+    </div>
+    <div class="art">
+      <slot name="art" />
+    </div>
+    <div class="title-block">
+      <Heading
+        class="vtitle"
+        id={`${vol.id}-title`}
+        tabindex="-1"
+        style={`--len:${longest};--cols:${vol.title.length}`}
+      >
+        {vol.title.map((line) => <span class="vline">{line}</span>)}
+      </Heading>
+      <p class="spine" aria-hidden="true">
+        <span class="roundel">{index + 1}</span>
+        <span class="spine-code">NV-{number}</span>
+      </p>
+    </div>
+    <slot name="jacket" />
+  </div>
+  <div class="obi">
+    <div class="obi-inner">
+      <slot name="obi" />
+    </div>
+    <span class="corner-tag" aria-hidden="true"><b>{number}</b></span>
+  </div>
+</section>
