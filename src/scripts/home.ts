@@ -220,8 +220,15 @@ function initDeck() {
     below = under;
   }
 
+  // the rail centres itself on the jacket of the open volume; set on the rail
+  // alone so the change restyles nothing else
+  const rail = document.querySelector<HTMLElement>(".rail");
+  const obiNow = (i: number) =>
+    rail?.style.setProperty("--obi-now", `${vols[i].querySelector<HTMLElement>(".obi")?.offsetHeight ?? 0}px`);
+
   function chrome(i: number) {
     root.dataset.vol = String(i + 1);
+    obiNow(i);
     [...railLinks, ...tocLinks].forEach((a) =>
       Number(a.dataset.goto) === i
         ? a.setAttribute("aria-current", "true")
@@ -550,6 +557,7 @@ function initDeck() {
       H = innerHeight;
       renderer.resize(W, H);
       centres = null;
+      obiNow(current);
       if (!busy) Object.assign(state, restFor(current));
       draw();
     });

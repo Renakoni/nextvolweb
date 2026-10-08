@@ -91,7 +91,7 @@
   --on-obi: var(--color-ink);
   --on-obi-soft: #4b4d57;
 }
-.vol-progress,
+.vol-listen,
 [data-vol="3"] {
   --jacket: var(--color-teal);
   --on-jacket: #ffffff;
@@ -440,15 +440,39 @@ html:not(.deck) .vol-switch {
 .rail {
   position: fixed;
   left: var(--pad);
-  top: calc(var(--header-h) + (100svh - var(--header-h) - var(--obi-h)) / 2);
+  top: calc(var(--header-h) + (100svh - var(--header-h) - var(--obi-now, var(--obi-h))) / 2);
   z-index: 40;
   transform: translateY(-50%);
   color: var(--on-jacket);
-  transition: color 0.45s var(--ease);
+  transition:
+    color 0.45s var(--ease),
+    top 0.6s var(--ease);
 }
 .rail ol {
   display: grid;
   gap: 2px;
+}
+/* Opened, the series list sits on its own patch of jacket so its labels
+   never print over the volume's content. */
+.rail::before {
+  content: "";
+  position: absolute;
+  inset: -12px -14px -12px -12px;
+  z-index: -1;
+  border-radius: 14px;
+  background: var(--jacket);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--on-jacket) 14%, transparent),
+    0 18px 40px -22px rgb(0 0 0 / 0.5);
+  opacity: 0;
+  transition:
+    opacity 0.25s var(--ease),
+    background-color 0.45s var(--ease);
+  pointer-events: none;
+}
+.rail:hover::before,
+.rail:focus-within::before {
+  opacity: 1;
 }
 .rail a {
   position: relative;
@@ -493,8 +517,7 @@ html:not(.deck) .vol-switch {
     transform 0.35s var(--ease-out-expo);
 }
 .rail:hover .rail-label,
-.rail a:focus-visible .rail-label,
-.rail a[aria-current] .rail-label {
+.rail:focus-within .rail-label {
   opacity: 1;
   transform: none;
 }
@@ -990,37 +1013,55 @@ html:not(.deck) .rail {
   grid-area: 1 / 1;
 }
 
-/* Volume 3 · Progress */
-.vol-progress {
+/* Volume 3 · Listen */
+.vol-listen {
   --sun-x: 30%;
   --sun-y: 30%;
   --sun-r: min(40vh, 28vw);
 }
-.progress-art .screen-back {
-  left: calc(var(--rail-w) + 25cqw);
+.listen-art .screen-back {
+  left: calc(var(--rail-w) + 32cqw);
   top: 0;
   height: calc(100cqh + 40px);
   rotate: 6deg;
 }
-.progress-art .screen-front {
+.listen-art .screen-front {
   left: calc(var(--rail-w) + 6cqw);
   top: 9cqh;
   height: calc(100cqh + 40px);
   rotate: -5deg;
 }
-.spec-list {
+/* The voice roll: credited on the obi the way an audio drama credits its cast,
+   counts printed in the jacket's own ink */
+.voice-roll {
+  max-width: 420px;
+}
+.voice-roll-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--on-obi-soft);
+}
+.voice-roll ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
-  max-width: 360px;
+  gap: 4px 18px;
+  margin-top: 8px;
 }
-.spec-list li {
-  padding: 7px 14px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--on-obi) 30%, transparent);
+.voice-roll li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 800;
+}
+.voice-roll b {
+  font-family: var(--font-latin);
+  font-weight: 800;
+  font-stretch: 86%;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--jacket);
 }
 
 /* Volume 4 · Paper: the jacket is the reader's paper */
@@ -1341,7 +1382,7 @@ html:not(.deck) .rail {
   padding: 0 0 24px calc(var(--pad) + var(--rail-w) + 70px);
 }
 .colophon {
-  width: min(500px, 54cqw);
+  width: min(500px, 44cqw);
   padding: clamp(22px, 3.4cqh, 36px) clamp(22px, 2.6cqw, 36px);
   background: var(--color-obi);
   color: var(--color-ink);
@@ -1511,24 +1552,15 @@ html:not(.deck) .rail {
   .tab-panel .obi-lead-sm {
     min-height: 3em;
   }
-  .progress-art .screen-back {
+  .listen-art .screen-back {
     left: 23cqw;
     top: 0;
     height: calc(100cqh + 20px);
   }
-  .progress-art .screen-front {
+  .listen-art .screen-front {
     left: 3cqw;
     top: 10cqh;
     height: calc(100cqh + 20px);
-  }
-  .spec-list {
-    justify-content: flex-start;
-    max-width: none;
-    gap: 6px;
-  }
-  .spec-list li {
-    padding: 5px 11px;
-    font-size: 13px;
   }
   .page {
     left: var(--pad);
@@ -2249,14 +2281,14 @@ html:not(.js) .paper-picker {
     --sun-y: 28%;
     --sun-r: 62vw;
   }
-  .progress-art .screen-front {
+  .listen-art .screen-front {
     left: 2cqw;
     top: auto;
     bottom: -18cqh;
     width: 47cqw;
     height: auto;
   }
-  .progress-art .screen-back {
+  .listen-art .screen-back {
     left: 19cqw;
     top: 3cqh;
     width: 37cqw;
@@ -2320,7 +2352,7 @@ html:not(.js) .paper-picker {
     --sun-y: 30%;
     --sun-r: 52vw;
   }
-  .vol-progress {
+  .vol-listen {
     --sun-x: 22%;
     --sun-y: 26%;
     --sun-r: 46vw;
@@ -2340,14 +2372,14 @@ html:not(.js) .paper-picker {
     width: 40cqw;
     height: auto;
   }
-  .progress-art .screen-front {
+  .listen-art .screen-front {
     left: var(--rail-w);
     top: auto;
     bottom: -10cqh;
     width: 34cqw;
     height: auto;
   }
-  .progress-art .screen-back {
+  .listen-art .screen-back {
     left: calc(var(--rail-w) + 16cqw);
     top: 2cqh;
     width: 30cqw;
@@ -2387,10 +2419,6 @@ html:not(.js) .paper-picker {
   .obi-actions {
     justify-content: flex-start;
   }
-  .spec-list {
-    justify-content: flex-start;
-    max-width: none;
-  }
   .lead-break {
     display: none;
   }
@@ -2411,10 +2439,10 @@ html:not(.js) .paper-picker {
   .source-art .screen {
     left: calc(var(--rail-w) + 6cqw);
   }
-  .progress-art .screen-front {
+  .listen-art .screen-front {
     left: calc(var(--rail-w) + 5cqw);
   }
-  .progress-art .screen-back {
+  .listen-art .screen-back {
     left: calc(var(--rail-w) + 20cqw);
   }
   .page {
@@ -2471,8 +2499,11 @@ html:not(.js) .paper-picker {
   .vol-cover .hill {
     height: 52%;
   }
-  .vol-progress .hill {
-    height: 44%;
+  .vol-listen .hill {
+    height: 34%;
+  }
+  .vol-shelf .hill {
+    height: 58%;
   }
   .vol-colophon {
     --sun-x: 30%;
@@ -2489,5 +2520,50 @@ html:not(.js) .paper-picker {
   .colophon dl > div {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+}
+
+/* Back matter (afterword, colophon): a slim obi, one line of copy beside its
+   action, so the band never outweighs what it carries */
+.vol-afterword,
+.vol-colophon {
+  --obi-h: clamp(112px, 15svh, 140px);
+}
+.vol-afterword .obi-inner,
+.vol-colophon .obi-inner {
+  padding-top: 18px;
+  padding-bottom: 20px;
+}
+.vol-afterword .obi-fine,
+.vol-colophon .obi-links {
+  margin-top: 4px;
+}
+@media (max-width: 767px) {
+  .vol-afterword,
+  .vol-colophon {
+    --obi-h: 0px;
+  }
+}
+
+@media (max-height: 720px) {
+  .rail a {
+    min-height: 32px;
+  }
+}
+/* Mid widths stack most obis; the back matter's one line still sits beside its action */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .vol-afterword .obi-inner,
+  .vol-colophon .obi-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .vol-afterword .obi-actions,
+  .vol-colophon .obi-actions {
+    justify-content: flex-end;
+  }
+}
+/* Phones: the colophon slip names the repository without its host */
+@media (max-width: 767px) {
+  .url-host {
+    display: none;
   }
 }

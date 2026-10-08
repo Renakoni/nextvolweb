@@ -6,7 +6,7 @@ export const issues = `${project}/issues`;
 export const volumes = [
   { id: "cover", label: "封面", title: ["下一卷，", "就在手边。"] },
   { id: "sources", label: "自选来源", title: ["故事从哪来，", "由你来选。"] },
-  { id: "progress", label: "按卷追读", title: ["一卷读完，", "下一卷接上。"] },
+  { id: "listen", label: "随时开听", title: ["眼睛歇一歇，", "耳朵接着读。"] },
   { id: "paper", label: "自己的纸张", title: ["这一页，", "是你的。"] },
   { id: "shelf", label: "随身书库", title: ["合上书，", "故事还在。"] },
   { id: "afterword", label: "后记", title: ["后记"] },
@@ -42,6 +42,16 @@ export const sources = [
   },
 ] as const;
 
+/** Built-in voices, as the app's voice library lists them (app 1.3.0). */
+export const voices = [
+  { name: "豆包", count: 47 },
+  { name: "Microsoft", count: 26 },
+  { name: "思必驰", count: 13 },
+  { name: "百度", count: 8 },
+  { name: "讯飞", count: 1 },
+  { name: "遇知", count: 1 },
+] as const;
+
 export const papers = [
   { id: "clear", name: "清纸", note: "清纸 · 白天也不刺眼" },
   { id: "sage", name: "豆绿", note: "豆绿 · 给眼睛留一点绿意" },
@@ -63,6 +73,10 @@ export const questions = [
   {
     q: "支持哪些阅读 3.0 书源？",
     a: "支持阅读 3.0（Legado）的文本书源，可通过链接或文件导入，使用书源里的搜索、发现、目录和正文规则。实际可用性取决于规则写法和站点状态；音频、漫画类书源和部分扩展接口不在兼容范围内。",
+  },
+  {
+    q: "听书要另外装语音引擎吗？",
+    a: "不用。NextVol 内置豆包、Microsoft、百度、思必驰、讯飞等在线音源，联网就能朗读；也可以选手机自带的系统朗读。起点、阿里云音源需要自己配置 Key。",
   },
   {
     q: "本地的 EPUB、TXT 能直接读吗？",

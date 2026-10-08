@@ -3,13 +3,13 @@ import Base from "../layouts/Base.astro";
 import Volume from "../components/Volume.astro";
 import Screen from "../components/Screen.astro";
 import Icon from "../components/Icon.astro";
-import { project, issues, volumes, sources, papers, covers, questions } from "../data/site";
+import { project, issues, volumes, sources, papers, covers, questions, voices } from "../data/site";
 ---
 
 <Base
   page="home"
   title="NextVol · 下一卷，就在手边"
-  description="NextVol 是 Android 小说阅读应用。轻小说按卷追读、阅读 3.0 文本书源、本地 EPUB 与 TXT，配上属于你的纸张。"
+  description="NextVol 是 Android 小说阅读应用。轻小说、阅读 3.0 文本书源、本地 EPUB 与 TXT，内置音源随时开听，配上属于你的纸张。"
 >
   <header class="chrome" id="chrome">
     <a class="brand" href="#cover" data-goto="0">
@@ -80,7 +80,7 @@ import { project, issues, volumes, sources, papers, covers, questions } from "..
       <Fragment slot="obi">
         <div class="obi-copy">
           <p class="obi-lead">
-            轻小说、阅读 3.0 书源、本地藏书，<br class="lead-break" />都在 NextVol 里接着读。
+            轻小说、阅读 3.0 书源、本地藏书，<br class="lead-break" />都在 NextVol 里接着读、接着听。
           </p>
           <p class="obi-fine">Android 7.0 及以上 · 开源项目 · Apache-2.0</p>
         </div>
@@ -156,27 +156,38 @@ import { project, issues, volumes, sources, papers, covers, questions } from "..
     </Volume>
 
     <Volume index={2}>
-      <div slot="art" class="progress-art">
-        <Screen class="screen-back" image="directory" alt="NextVol 阅读器里的章节选择面板，可搜索章节名或编号" />
+      <div slot="art" class="listen-art">
+        <Screen
+          class="screen-back"
+          image="voices"
+          alt="NextVol 音源列表：系统朗读，以及豆包、Microsoft、百度、思必驰、遇知、讯飞等内置音源"
+        />
         <Screen
           class="screen-front"
-          image="book-detail"
-          alt="NextVol 书籍详情：目录、上次阅读位置与“继续阅读”按钮"
+          image="listen"
+          alt="NextVol 正在朗读原创示例书《风经过的地方》：正在读的句子高亮，右上角是带封面的播放小窗"
         />
       </div>
       <Fragment slot="obi">
         <div class="obi-copy">
-          <p class="obi-lead">
-            分卷目录、已读进度和书签，都替你记着；<br class="lead-break" />点「继续阅读」，回到上次读到的地方。
+          <p class="obi-lead">内置豆包、Microsoft、百度、讯飞等音源，<br class="lead-break" />打开书就能听。</p>
+          <p class="obi-fine">
+            正在读的句子会高亮，读完一章自动接下一章；语速 0.5–2 倍，定时 1–60 分钟，锁屏和后台照样播放。内置音源需联网，也可以用手机自带的系统朗读。
           </p>
         </div>
-        <ul class="spec-list" aria-label="相关功能">
-          <li>分卷目录</li>
-          <li>章节进度</li>
-          <li>书签</li>
-          <li>章节搜索</li>
-          <li>离线缓存</li>
-        </ul>
+        <div class="voice-roll">
+          <p class="voice-roll-title">内置音色 · 近百种</p>
+          <ul>
+            {
+              voices.map((voice) => (
+                <li>
+                  {voice.name}
+                  <b>{voice.count}</b>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </Fragment>
     </Volume>
 
@@ -240,8 +251,8 @@ import { project, issues, volumes, sources, papers, covers, questions } from "..
         </div>
         <dl class="obi-notes">
           <div>
-            <dt>听书</dt>
-            <dd>配置系统语音引擎或音源后朗读，可调语速、定时停止。</dd>
+            <dt>续读</dt>
+            <dd>分卷目录、已读进度和书签都记着，点「继续阅读」回到上次的位置。</dd>
           </div>
           <div>
             <dt>备份</dt>
@@ -297,7 +308,7 @@ import { project, issues, volumes, sources, papers, covers, questions } from "..
             <div><dt>许可</dt><dd>Apache-2.0</dd></div>
             <div>
               <dt>源码</dt>
-              <dd><a href={project} target="_blank" rel="noopener noreferrer">github.com/Renakoni/nextvol</a></dd>
+              <dd><a href={project} target="_blank" rel="noopener noreferrer"><span class="url-host">github.com/</span>Renakoni/nextvol</a></dd>
             </div>
             <div>
               <dt>反馈</dt>
@@ -308,7 +319,7 @@ import { project, issues, volumes, sources, papers, covers, questions } from "..
       </div>
       <Fragment slot="obi">
         <div class="obi-copy">
-          <p class="obi-lead">准备好了，就带上 NextVol。</p>
+          <p class="obi-lead obi-lead-sm">准备好了，就带上 NextVol。</p>
           <nav class="obi-links" aria-label="项目链接">
             <a href={`${project}/releases`} target="_blank" rel="noopener noreferrer">发布记录</a>
             <a href={issues} target="_blank" rel="noopener noreferrer">问题反馈</a>
