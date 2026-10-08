@@ -471,7 +471,7 @@ html:not(.deck) .vol-switch {
   pointer-events: none;
 }
 .rail:hover::before,
-.rail:focus-within::before {
+.rail:has(:focus-visible)::before {
   opacity: 1;
 }
 .rail a {
@@ -517,7 +517,7 @@ html:not(.deck) .vol-switch {
     transform 0.35s var(--ease-out-expo);
 }
 .rail:hover .rail-label,
-.rail:focus-within .rail-label {
+.rail:has(:focus-visible) .rail-label {
   opacity: 1;
   transform: none;
 }
